@@ -1,5 +1,5 @@
 # player-communication
-
+## Task description
 
 Having a Player class - an instance of this class with that can communicate with other Player(s) (other instances of this class)
 
@@ -7,11 +7,11 @@ The use case for this task is as bellow:
 
 1. create 2 players
 
-2. one of the players should send a message to second player (let's call this player "initiator")
+2. one of the players should send a message to second player (let's call this player "threadedInitiator")
 
 3. when a player receives a message should send back a new message that contains the received message concatenated with the message counter that this player sent.
 
-4. finalize the program (gracefully) after the initiator sent 10 messages and received back 10 messages (stop condition)
+4. finalize the program (gracefully) after the threadedInitiator sent 10 messages and received back 10 messages (stop condition)
 
 5. both players should run in the same java process (strong requirement)
 
@@ -25,3 +25,19 @@ Please provide a shell script to start the program.
 Everything what is not clearly specified is to be decided by developer. Everything what is specified is a hard requirement.
 Please focus on design and not on technology, the technology should be the simplest possible that is achieving the target.
 The focus of the exercise is to deliver the cleanest and clearest design that you can achieve (and the system has to be functional).
+
+## Execution
+### Verifying fulfillment of the requirement No. 5
+Execute test cases with Maven:
+>mvn test
+
+In the console log you can see the result of Players communication.
+
+### Verifying fulfillment of the requirement No. 7
+Build package with Maven:
+>mvn package -Dmaven.test.skip=true
+
+Then execute the shell script:
+>./launch.sh
+
+In the console log you can see the result of Players communication. After the execution finishes, press ENTER key to exit.
